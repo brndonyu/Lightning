@@ -6,10 +6,10 @@ int y2 = 100 + 450;
 
 int move = (int)(Math.random()*40); //movement
 int stat;
-int counter = 0;
-String stocks = {};
-color list = {};
-//fill with colors and stocks
+int i = 0;
+String [] stocks = {"BRK.A","NYSE:SEB","NYSE:NVR","NYSE: BKNG","Nasdaq: AMZN","NYSE: MKL"};
+
+
 void setup()
 {
   size(1200,1000);
@@ -21,8 +21,8 @@ void draw()
 	textAlign(CENTER);
 	textSize(50);
 	text("STOCK MARKET SIMULATOR",600,100);
+	while(x1 <= 1000){
 
-	while(x1 < 1000){
 	strokeWeight(5);
  	move = (int)(Math.random()*50);
  	stat = (int)(Math.random()+0.5);
@@ -34,20 +34,41 @@ void draw()
 	line(x1,y1,x2,y2);
 	x1 = x2;
 	y1 = y2;
-	//make it change stock and color based on list{i};
-	counter += 1;
 
+	if(x1 == 1000){
+		i++;
 	}
-
+  	System.out.println(i);
 	}
 
 }
 
 void mousePressed()
 {	
-x1 = 200;
-y1 = 100 + 450;
-x2 = 200;
-y2 = 100 + 450;
+	background(178);
+
+	fill(0);
+	textAlign(CENTER);
+	textSize(50);
+	text("STOCK MARKET SIMULATOR",600,100);
+
+	textSize(25);
+	if(i >= stocks.length){
+		i = 0;
+	}
+	text(stocks[i],100,500);
+
+
+	strokeWeight(1);
+	line(200,200,200,800);
+	line(200,200,1025,200);
+	line(1025,200,1025,800);
+	line(200,800,1025,800);
+
+	x1 = 200;
+	y1 = 100 + 450;
+	x2 = 200;
+	y2 = 100 + 450;
+
 }
 
