@@ -19,6 +19,10 @@ void setup()
 void draw()
 {
 	textAlign(CENTER);
+	textSize(20);
+	text("2019",200,850);
+	text("2030",1025,850);
+
 	textSize(50);
 	text("STOCK MARKET SIMULATOR",600,100);
 	while(x1 <= 1000){
@@ -56,7 +60,6 @@ void mousePressed()
 		i = 0;
 	}
 	text(stocks[i],100,500);
-
 
 	strokeWeight(1);
 	line(200,200,200,800);
